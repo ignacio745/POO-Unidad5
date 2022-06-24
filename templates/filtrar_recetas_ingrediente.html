@@ -1,0 +1,9 @@
+{% extends "base_template.html" %}
+{% block title %}Filtrar recetas por ingrediente{% endblock %}
+{% block content %}
+    <form action=" {{ url_for('recetasPorIngrediente') }}" method="post">
+        <label for="ingrediente">Ingrediente</label>
+        <input type="text" name="ingrediente">
+        <input type="submit" value="Mostrar">
+    </form>
+{% endblock %}

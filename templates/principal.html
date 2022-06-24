@@ -1,0 +1,10 @@
+{% extends "base_template.html" %}
+{% block title %}Pagina Principal{% endblock %}
+{% block content %}
+    <a href="{{ url_for('compartirReceta') }}">Compartir receta</a><br>
+    <a href="{{ url_for('consultarRanking') }}">Consultar ranking</a><br>
+    <a href="{{ url_for('consultarRecetas') }}">Consultar recetas</a><br>
+    <a href="{{ url_for('consultarRecetasTiempo') }}" >Consultar recetas por tiempo</a><br>
+    <a href=" {{ url_for('recetasPorIngrediente') }}">Consultar recetas por ingrediente</a>
+    <a href="{{ url_for('cerrarSesion') }}">Cerrar sesion</a><br>
+{% endblock %}

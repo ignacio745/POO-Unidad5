@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Agregar ingrediente</title>
+    </head>
+    <body>
+        <div>
+            <h1>{{ nombre_receta }}</h1>
+            <form action= "{{ url_for('agregarIngrediente', id_receta=id_receta, nombre_receta=nombre_receta, cantidad=cantidad+1) }}" method="post">
+                <label for="nombre" >Ingrediente</label>
+                <input type="text" name="nombre" placeholder="Ingrediente"><br>
+                <label for="cantidad">Cantidad</label>
+                <input type="number" name="cantidad" placeholder="Cantidad"><br>
+                <label for="unidad">Unidad</label>
+                <input type="text" name="unidad" placeholder="Unidad"><br>
+                <input type="submit" value="Agregar ingrediente">
+            </form>
+        <a href="{{ url_for('recetaAgregada', nombre_receta=nombre_receta) }}">Terminar</a>
+        </div>
+    </body>
+</html>

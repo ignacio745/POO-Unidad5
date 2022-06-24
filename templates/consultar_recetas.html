@@ -1,0 +1,10 @@
+{% extends "base_template.html" %}
+{% block title %}{{titulo}}{% endblock %}
+{% block content %}
+    <h1>{{ titulo }}</h1>
+    {% for una_receta in recetas %}
+        <a href="{{ url_for('mostrarReceta', id_receta=una_receta.id) }}"><h2>{{ una_receta.nombre }}</h2></a>
+        <h5>👍 {{ una_receta.cantidadMeGusta }}</h5>
+    {% endfor %}
+    <button type="button" onclick="history.go(-1)">Volver</button>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+    <!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}"" -->
+    </head>
+    <body>
+        {% block content %}{% endblock  %}
+        <div>
+            <br><br><a href="{{ url_for('principal') }}" >Pagina principal</a><br><br>
+        </div>
+    </body>
+</html>

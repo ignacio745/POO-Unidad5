@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+{% block title %}{{ una_receta.nombre }}{% endblock %}
+{% block content %}
+    <h1>{{ titulo }}</h1>
+    <h2>{{ una_receta.nombre }}</h2>
+    {% if una_receta.usuarioid != usuario_id %}
+        <form action="{{ url_for('darMeGusta', id_receta=una_receta.id, iteracion=iteracion+1) }}" method="post">
+            <button type="submit">Me gusta</button>
+        </form>
+    {% endif %}
+    <h3>Ingredientes</h3>
+    {% for un_ingrediente in ingredientes %}
+        <h4>{{ un_ingrediente.nombre }}</h5>
+    {% endfor %}
+    <h5>Cantidad me gusta: {{ una_receta.cantidadMeGusta }}</h3>
+    <button type="button" onclick="history.go(-{{ iteracion }})">Volver</button>
+{% endblock %}
